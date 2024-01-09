@@ -1,0 +1,11 @@
+FROM ubuntu:jammy
+
+MAINTAINER ys ysyanshuai2@gmail.com
+
+WORKDIR /app
+
+RUN chmod 777 /var/log
+
+COPY target/tech-spring-boot-starter /app
+
+CMD ["/app/tech-spring-boot-starter"]

@@ -1,0 +1,34 @@
+server:
+  port: 8089
+  tomcat:
+    max-connections: 10000
+    uri-encoding: UTF-8
+    threads:
+      max: 800
+      min-spare: 10
+    max-keep-alive-requests: 200
+    keep-alive-timeout: 60s
+    connection-timeout: 6s
+    accept-count: 1000
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+  main:
+    keep-alive: true
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  profiles:
+    active: ${PROFILE:native}
+  output:
+    ansi:
+      enabled: always
+
+tech:
+  props:
+    name: test
+    nested:
+      version: 3.2.0
+      jdk: 21
+
